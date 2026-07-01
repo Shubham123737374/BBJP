@@ -7,26 +7,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
+   <style>
     /* Blinking Animation */
     @keyframes blinker {
         50% { opacity: 0; }
     }
     .live-dot-red {
-        height: 10px; width: 10px;
-        background-color: #ff0000; /* Laal rang ki light */
-        border-radius: 50%; display: inline-block;
-        margin-right: 8px;
-        animation: blinker 1s linear infinite;
-        box-shadow: 0 0 8px #ff0000;
+        height: 10px; width: 10px; background-color: #ff0000;
+        border-radius: 50%; display: inline-block; margin-right: 8px;
+        animation: blinker 1s linear infinite; box-shadow: 0 0 8px #ff0000;
     }
     .live-dot-white {
-        height: 10px; width: 10px;
-        background-color: #ffffff; /* Safed rang ki light */
-        border-radius: 50%; display: inline-block;
-        margin-right: 8px;
-        animation: blinker 1s linear infinite;
-        box-shadow: 0 0 8px #ffffff;
+        height: 10px; width: 10px; background-color: #ffffff;
+        border-radius: 50%; display: inline-block; margin-right: 8px;
+        animation: blinker 1s linear infinite; box-shadow: 0 0 8px #ffffff;
+    }
+
+    /* 🌟 डेस्कटॉप के लिए बटन्स का डिज़ाइन */
+    .btn-header-live {
+        background-color: #FF9933; color: black !important; padding: 8px 16px; border-radius: 5px;
+        text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px;
+        display: inline-flex; align-items: center; white-space: nowrap; margin-left: 10px;
+    }
+    .btn-hero-vote {
+        background-color: #d32f2f; color: white !important; padding: 12px 30px; border-radius: 30px;
+        text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 15px;
+        display: inline-flex; align-items: center; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        margin-left: 15px;
+    }
+
+    /* 📱 मोबाइल के लिए ऑटोमैटिक फिक्स (Media Query) */
+    @media screen and (max-width: 768px) {
+        .btn-header-live {
+            padding: 6px 12px; font-size: 12px; margin-left: 5px; /* मोबाइल हेडर में चौड़ाई कम करेगा */
+        }
+        .btn-hero-vote {
+            margin-left: 0px; margin-top: 15px; /* बटन के बीच में गैप लाएगा और चिपकने नहीं देगा */
+        }
     }
 </style>
 
@@ -67,7 +84,8 @@
         <div class="header-actions">
             <button id="lang-toggle" onclick="toggleLanguage()">🌐 Hindi</button>
             <a href="join.html" class="header-join-btn">JOIN NOW</a>
-            <a href="voting.html" style="background-color: #FF9933; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-right: 15px; text-transform: uppercase; font-size: 14px; display: inline-flex; align-items: center;">
+
+            <a href="voting.html" class="btn-header-live">
             <span class="live-dot-red"></span> LIVE VOTING
             </a>
         </div>
@@ -86,9 +104,11 @@
                 <p class="hi" style="display:none;">The Gen Z युवा यहाँ है। सिस्टम हैंग करना है? तो साथ आओ और अपना 'स्ट्रगल कोटा' क्लेम करो।</p>
                 
                 <a href="join.html" class="main-join-btn glow">JOIN THE MOVEMENT</a>
-                <a href="voting.html" style="background-color: #d32f2f; color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-left: 15px; text-transform: uppercase; font-size: 15px; display: inline-flex; align-items: center; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);">
+                
+                <a href="voting.html" class="btn-hero-vote">
                 <span class="live-dot-white"></span> CAST YOUR VOTE
                 </a>
+
             </div>
             <div class="hero-image">
                 <img src="assets/banner.png" alt="BBJP Leader">
